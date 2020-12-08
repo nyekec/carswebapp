@@ -1,0 +1,152 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bets page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<nav th:insert="navbar"></nav>
+<main role="main" class="container-fluid p-4">
+    <div class="card mb-4 shadow-sm border-primary background-primary">
+        <div class="card-header text-white bg-primary">
+            Car details
+        </div>
+        <div class="card-body">
+            <form th:action="@{/modifyCar}" th:object="${carDetails}" th:method="post">
+                <div class="form-group input-group mb-3">
+                    <div class="form-group input-group mb-3">
+                        <input class="form-control" id="id" th:name="id" th:value="${carDetails.getId()}" hidden>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="Carbrand">Brand</span>
+                        </div>
+                        <input class="form-control" id="brand" th:name="brand" th:value="${carDetails.getBrand()}"
+                               aria-label="Carbrand"
+                               aria-describedby="Carbrand_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarType">Type</span>
+                        </div>
+                        <input class="form-control" id="type" th:name="type" th:value="${carDetails.getType()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarDesign">Design</span>
+                        </div>
+                        <input class="form-control" id="design" th:name="design" th:value="${carDetails.getDesign()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarYear">Year</span>
+                        </div>
+                        <input class="form-control" id="year" th:name="year" th:value="${carDetails.getYear()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarColor">Color</span>
+                        </div>
+                        <input class="form-control" id="color" th:name="color" th:value="${carDetails.getColor()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarCap">Cubic Capacity</span>
+                        </div>
+                        <input class="form-control" id="cubicCapacity" th:name="cubicCapacity" th:value="${carDetails.getCubicCapacity()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarFuel">Fuel Type</span>
+                        </div>
+                        <input class="form-control" id="fuelType" th:name="fuelType" th:value="${carDetails.getFuelType()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+                    <div class="form-group input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="CarTransmission">Transmission</span>
+                        </div>
+                        <input class="form-control" id="transmission" th:name="transmission" th:value="${carDetails.getTransmission()}"
+                               aria-label="Username"
+                               aria-describedby="Name_input">
+
+                        <!--select class="browser-default custom-select" th:field="*{brand}">
+                            <option th:each="brand:${brands}"
+                            th:utext="${brand}"
+                            th:value="${brand}"
+                                    th:name="${brand}"></option>
+                        </select-->
+                    </div>
+
+
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            <form th:action="@{/deleteCar}" method="post">
+                <button type="submit" class="btn btn-primary" th:name="carId" th:value="${carDetails.getId()}">Delete</button>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>
