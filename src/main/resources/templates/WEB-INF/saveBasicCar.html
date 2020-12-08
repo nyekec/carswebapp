@@ -1,7 +1,7 @@
 <!Doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Main page</title>
+    <title>Save Car</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -11,16 +11,15 @@
 <main role="main" class="container-fluid p-4">
     <div class="card mb-4 shadow-sm border-primary background-primary">
         <div class="card-header text-white bg-primary">
-            Person details
+            Új autó felvitele az adatbázisba
         </div>
         <div class="card-body">
             <form th:action="@{/saveCar}" th:object="${basicCar}" th:method="post">
-                <!--itt kell neki az object amibe a th:name alapján betudja tolni az adatot nem mindig eszi meg hogy ne legyen piros-->
                 <div class="form-group input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="Car_brand">Brand</span>
+                        <span class="input-group-text" id="Car_brand">Márka</span>
                     </div>
-                    <input class="form-control" id="brand" th:name="brand" th:value="Brand"
+                    <input class="form-control" id="brand" th:name="brand"
                            aria-label="brand"
                            aria-describedby="brand">
 
@@ -33,23 +32,61 @@
             </div>
                 <div class="form-group input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="Car_Type">Type</span>
+                        <span class="input-group-text" id="Car_Type">Típus</span>
                     </div>
                     <input class="form-control" id="type" th:name="type"
                            aria-label="type"
-                           aria-describedby="type" th:value="type">
-                    <!--lehet kell majd egy th:value="*{datePlanted}" ahoz, hogy az object fieldjeit elérd de elvileg az id ugyan ezt tudja -->
+                           aria-describedby="type">
                 </div>
                 <div class="form-group input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="Car_Design">Type</span>
+                        <span class="input-group-text" id="Car_Design">Kivitel</span>
                     </div>
                     <input class="form-control" id="design" th:name="design"
                            aria-label="design"
-                           aria-describedby="type" th:value="design">
-                    <!--lehet kell majd egy th:value="*{datePlanted}" ahoz, hogy az object fieldjeit elérd de elvileg az id ugyan ezt tudja -->
+                           aria-describedby="design">
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <div class="form-group input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="Car_Year">Gyártási év</span>
+                    </div>
+                    <input class="form-control" id="year" th:name="year"
+                           aria-label="year"
+                           aria-describedby="year">
+                </div>
+                <div class="form-group input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="Car_Color">Szín</span>
+                    </div>
+                    <input class="form-control" id="color" th:name="color"
+                           aria-label="color"
+                           aria-describedby="color">
+                </div>
+                <div class="form-group input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="Car_CubCap">Motor mérete</span>
+                    </div>
+                    <input input type="number" class="form-control" id="cubicCapacity" th:name="cubicCapacity"
+                           aria-label="cubicCapacity"
+                           aria-describedby="cubicCapacity">
+                </div>
+                <div class="form-group input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="Car_Fuel">Üzemanyag</span>
+                    </div>
+                    <input class="form-control" id="fuelType" th:name="fuelType"
+                           aria-label="fuelType"
+                           aria-describedby="fuelType">
+                </div>
+                <div class="form-group input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="Car_Transmission">Váltó típusa</span>
+                    </div>
+                    <input class="form-control" id="transmission" th:name="transmission"
+                           aria-label="transmission"
+                           aria-describedby="transmission">
+                </div>
+                <button type="submit" class="btn btn-success">Mentés</button>
             </form>
         </div>
     </div>

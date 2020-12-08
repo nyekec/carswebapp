@@ -2,7 +2,6 @@ package com.SemTaskWZRZNC.project.carswebapp.controller;
 
 import com.SemTaskWZRZNC.project.carswebapp.domain.CarBrand;
 import com.SemTaskWZRZNC.project.carswebapp.domain.entity.BasicCar;
-import com.SemTaskWZRZNC.project.carswebapp.domain.entity.BasicCarDTO;
 import com.SemTaskWZRZNC.project.carswebapp.service.IBasicCarDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,19 +17,18 @@ public class BasicCarController {
     @Autowired
     private IBasicCarDAO carDAO;
 
-    //add
+
     @RequestMapping(value = "/saveCar", method = RequestMethod.POST)
     public String saveCars(@ModelAttribute("basicCar") BasicCar basicCar){
         carDAO.SaveBasicCar(basicCar);
-        return "redirect:showSave"; //view neve
+        return "redirect:showSave";
     }
 
-    //megmutatj a save-s formot
     @RequestMapping(value = "/showSave", method = RequestMethod.GET)
     public String showCars(Model model){
         List<CarBrand> brands = Arrays.asList(CarBrand.values());
         model.addAttribute("brands", brands);
-        return "saveBasicCar"; //view neve
+        return "saveBasicCar";
     }
 
     @RequestMapping("/login")
@@ -61,27 +59,4 @@ public class BasicCarController {
         carDAO.DeleteBasicCar(carId);
         return "redirect:listCars";
     }
-
-
-
-
-
-    //View html neve
-    //Model Object megjelenítéshez/ kitöltésre
-/*
-    //
-    @RequestMapping(value = "/showSave", method = RequestMethod.GET)
-    public ModelAndView showCars2(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject(carDAO.ShowCars(),"cars"); //th:object="${cars}", th:each="car in cars"
-        modelAndView.setViewName("saveBasicCar");
-        return modelAndView; //view neve és az object
-    }
-
-    //
-    @RequestMapping(value = "/showSave", method = RequestMethod.GET)
-    public String showCars3(Model cars) {
-        cars.addAttribute("cars", carDAO.ShowCars());
-        return "saveBasicCar"; //view ne
-    }*/
 }

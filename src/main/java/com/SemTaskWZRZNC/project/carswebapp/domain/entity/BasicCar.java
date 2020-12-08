@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Builder
@@ -32,9 +30,4 @@ public class BasicCar {
     private int cubicCapacity;
     private String fuelType;
     private String transmission;
-
-
-
-    //@OneToOne(cascade = CascadeType.ALL)
-    //private FullDetails fullDetails;
 }

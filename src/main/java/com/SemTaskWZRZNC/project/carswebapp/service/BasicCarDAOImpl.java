@@ -1,7 +1,6 @@
 package com.SemTaskWZRZNC.project.carswebapp.service;
 
 import com.SemTaskWZRZNC.project.carswebapp.domain.entity.BasicCar;
-import com.SemTaskWZRZNC.project.carswebapp.domain.entity.BasicCarDTO;
 import com.SemTaskWZRZNC.project.carswebapp.domain.repository.IBasicCarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -8,19 +8,18 @@
 </head>
 <body>
 <header class="p-5 bg-dark text-white text-center">
-    <h1 id="header">Welcome to SportsBet!</h1>
-    <p id="description">Sports betting is the activity of predicting sports results and placing a wager on the
-        outcome.</p>
+    <h1 id="header">Üdv az Autós adatbázis login felületén!</h1>
+    <p id="description">Az Autós adatbázisban - a bejelentkezés után - már meglévő autókat ki tudja listázni, tudja módosítani, törölni, és új elemet felvinni.</p>
 </header>
 <main role="main" class="container w-20 p-3 ml-5 pl-5">
     <div class="row mb-2">
         <div class="col-12 ml-5">
             <div class="text-left p-2">
-                <h2><a href="login.html">Login</a> or <a href="">Register</a> to start!</h2>
+                <h2><a href="login.html">Bejelentkezés</a></h2>
             </div>
             <div class="card w-25 m-2 mb-4 shadow-sm border-primary background-primary">
                 <div class="card-header text-white bg-primary">
-                    Login
+                    Jelentkezzen be az oldal használatához
                 </div>
                 <div class="card-body">
                     <form role="form" th:action="@{/login}" th:method="post">
@@ -33,14 +32,14 @@
                             <input type="password" class="form-control" id="password" name="password"
                                    placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+                        <button type="submit" class="btn btn-primary" id="loginButton">Bejelentkezés</button>
                     </form>
                 </div>
                 <div th:if="${param.error}" class="alert alert-danger" role="alert">
-                    Invalid username and password.
+                    Helytelen felhasználónév vagy jelszó.
                 </div>
                 <div th:if="${param.logout}" role="alert">
-                    You have been logged out.
+                    Kijelentkezve.
                 </div>
             </div>
         </div>

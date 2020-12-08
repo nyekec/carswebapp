@@ -1,6 +1,5 @@
 package com.SemTaskWZRZNC.project.carswebapp.service;
 
-import com.SemTaskWZRZNC.project.carswebapp.domain.CarBrand;
 import com.SemTaskWZRZNC.project.carswebapp.domain.entity.BasicCar;
 import com.SemTaskWZRZNC.project.carswebapp.domain.entity.EntityUser;
 import com.SemTaskWZRZNC.project.carswebapp.domain.repository.IUserRepository;
@@ -9,7 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TestDateFactory implements CommandLineRunner {
+public class TestDataFactory implements CommandLineRunner {
 
     @Autowired
     private IBasicCarDAO carDAO;
@@ -17,20 +16,20 @@ public class TestDateFactory implements CommandLineRunner {
     @Autowired
     private IUserRepository userDao;
 
-    private void addCar(){
-        carDAO.SaveBasicCar(createCar());
+    private void addCar(String brand, String type, String design){
+        carDAO.SaveBasicCar(createCar(brand, type, design));
     }
 
     private void addUser(){
         userDao.save(createUser());
     }
 
-    private BasicCar createCar() {
+    private BasicCar createCar(String brand, String type, String design) {
         return BasicCar.builder()
                 //.brand(CarBrand.FORD)
-                .brand("Audi")
-                .type("A8")
-                .design("Kombi")
+                .brand(brand)
+                .type(type)
+                .design(design)
                 .build();
     }
 
@@ -42,10 +41,11 @@ public class TestDateFactory implements CommandLineRunner {
                 .build();
     }
 
-
     @Override
     public void run(String... args) {
         addUser();
-        addCar();
+        for (int i=0; i<8;i++){
+            addCar("Audi","A"+(i+1), "Sport");
+        }
     }
 }
