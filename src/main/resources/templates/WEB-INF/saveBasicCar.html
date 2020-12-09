@@ -19,7 +19,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_brand">Márka</span>
                     </div>
-                    <input class="form-control" id="brand" th:name="brand"
+                    <input required="true" class="form-control" id="brand" th:name="brand"
                            aria-label="brand"
                            aria-describedby="brand">
 
@@ -34,7 +34,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Type">Típus</span>
                     </div>
-                    <input class="form-control" id="type" th:name="type"
+                    <input required="true" class="form-control" id="type" th:name="type"
                            aria-label="type"
                            aria-describedby="type">
                 </div>
@@ -42,7 +42,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Design">Kivitel</span>
                     </div>
-                    <input class="form-control" id="design" th:name="design"
+                    <input required="true" class="form-control" id="design" th:name="design"
                            aria-label="design"
                            aria-describedby="design">
                 </div>
@@ -50,7 +50,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Year">Gyártási év</span>
                     </div>
-                    <input class="form-control" id="year" th:name="year"
+                    <input required="true" input type="number" class="form-control" id="year" th:name="year"
                            aria-label="year"
                            aria-describedby="year">
                 </div>
@@ -58,7 +58,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Color">Szín</span>
                     </div>
-                    <input class="form-control" id="color" th:name="color"
+                    <input required="true" class="form-control" id="color" th:name="color"
                            aria-label="color"
                            aria-describedby="color">
                 </div>
@@ -66,7 +66,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_CubCap">Motor mérete</span>
                     </div>
-                    <input input type="number" class="form-control" id="cubicCapacity" th:name="cubicCapacity"
+                    <input required="true" input type="number" class="form-control" id="cubicCapacity" th:name="cubicCapacity"
                            aria-label="cubicCapacity"
                            aria-describedby="cubicCapacity">
                 </div>
@@ -74,7 +74,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Fuel">Üzemanyag</span>
                     </div>
-                    <input class="form-control" id="fuelType" th:name="fuelType"
+                    <input required="true" class="form-control" id="fuelType" th:name="fuelType"
                            aria-label="fuelType"
                            aria-describedby="fuelType">
                 </div>
@@ -82,7 +82,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="Car_Transmission">Váltó típusa</span>
                     </div>
-                    <input class="form-control" id="transmission" th:name="transmission"
+                    <input required="true" class="form-control" id="transmission" th:name="transmission"
                            aria-label="transmission"
                            aria-describedby="transmission">
                 </div>

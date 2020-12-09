@@ -25,7 +25,7 @@ public class BasicCar {
     private String brand;
     private String type;
     private String design;
-    private String year;
+    private int year;
     private String color;
     private int cubicCapacity;
     private String fuelType;
